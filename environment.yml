@@ -1,0 +1,10 @@
+name: eqpre
+channels:
+  - defaults
+dependencies:
+  - python<3.11
+  - pandas=1.5.3
+  - numpy<1.24
+  - matplotlib=3.7
+  - tensorflow<=2.10
+prefix: C:/ProgramData/Anaconda3/envs/eqpre
