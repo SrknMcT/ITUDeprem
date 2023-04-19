@@ -1,2 +1,4 @@
 *.dat
 *.pyc
+data/ABPO_2009.txt
+data/ABPO2009_foF2.txt
