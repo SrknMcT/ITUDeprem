@@ -1,7 +1,6 @@
 import os
 
-import tensorflow as tf
-import tensorflow.keras as tf_kr
+import keras as tf_kr
 
 from models.BaseModel import BaseModel
 

@@ -1,7 +1,7 @@
 import logging
 import os
 
-import tensorflow.keras as tf_kr
+import keras as tf_kr
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
@@ -30,9 +30,6 @@ class BaseModel():
     #Define model here in child classes
     def init_model(self):
         raise NotImplementedError
-
-    # def is_fit_model_implemented(self):
-    #     return False
 
     #Fits the model. It is for overriding input output shape etc.
     def fit_model(self):
