@@ -1,6 +1,7 @@
 import os
 
-import keras as tf_kr
+import tensorflow as tf
+import tensorflow.keras as tf_kr
 
 from models.BaseModel import BaseModel
 
@@ -32,7 +33,7 @@ class Model(BaseModel):
 
         self.model.compile(
             optimizer = optimizer, 
-            loss = 'mse',
+            loss =  self.exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.00),
             metrics = self.metrics)
 
     def fit_model(self, X_train, y_train, verbose=False):

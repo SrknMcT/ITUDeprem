@@ -1,6 +1,7 @@
 import os
 
-import keras as tf_kr
+import tensorflow as tf
+import tensorflow.keras as tf_kr
 
 from models.BaseModel import BaseModel
 
@@ -18,28 +19,31 @@ class FinalModel(BaseModel):
         self.learning_rate = 0.05
     
     def init_model(self):
-        #optimizer = tf_kr.optimizers.SGD(learning_rate=self.learning_rate, momentum=self.momentum, nesterov=self.nesterov, decay=self.decay)
+        # optimizer = tf_kr.optimizers.SGD(learning_rate=self.learning_rate, momentum=self.momentum, nesterov=self.nesterov, decay=self.decay)
         optimizer = tf_kr.optimizers.Adam(learning_rate = self.learning_rate)
 
         self.model.add( tf_kr.layers.InputLayer(input_shape=(self.input_shape[1],), name="input_1" ) )
 
         self.model.add( tf_kr.layers.Dense(8, activation=self.activation_name) )
-        self.model.add( tf_kr.layers.Dropout(0.1) )
+        #self.model.add( tf_kr.layers.Dropout(0.1) )
 
         self.model.add( tf_kr.layers.Dense(32, activation=self.activation_name) )
-        self.model.add( tf_kr.layers.Dropout(0.1) )
+        #self.model.add( tf_kr.layers.Dropout(0.1) )
 
         self.model.add( tf_kr.layers.Dense(32, activation=self.activation_name) )
-        self.model.add( tf_kr.layers.Dropout(0.1) )
+        #self.model.add( tf_kr.layers.Dropout(0.1) )
 
         self.model.add( tf_kr.layers.Dense(16, activation=self.activation_name) )
-        self.model.add( tf_kr.layers.Dropout(0.1) )
+        #self.model.add( tf_kr.layers.Dropout(0.1) )
 
         self.model.add( tf_kr.layers.Dense(1) )
 
         self.model.compile(
             optimizer = optimizer, 
-            loss = 'mse',
+            # (power=3, l1=0.00, l2=100, y_pred_l2=0.00) and 
+            # (power=2, l1=0.00, l2=0.1, y_pred_l2=0.00) are the best. Plots are similar. Inspect these two configuration on different experiments. 
+            # y_pred_l2 is not that effective as l2.
+            loss = self.exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.1, y_pred_l2=0.00),
             metrics = self.metrics)
 
     def fit_model(self, X_train, y_train, verbose=False):
