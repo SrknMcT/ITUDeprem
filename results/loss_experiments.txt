@@ -1,0 +1,320 @@
+MICROSEISMIC OFF
+error windows=4
+haar-2
+R2	 Train:  0.4896313746392985 	Test:  0.6317868414227876
+RMSE	 Train:  155.50120410991352 	Test:  179.1780174606414
+MAPE	 Train:  3.2878201161323656e+16 	Test:  3.4904464364938444e+16
+
+haar-3
+R2	 Train:  0.5050027315399049 	Test:  0.6308006472485711
+RMSE	 Train:  153.14159753349685 	Test:  179.41780541115128
+MAPE	 Train:  2.9870538256119516e+16 	Test:  3.428337751951191e+16
+
+sym2-4
+R2	 Train:  0.4513169419880517 	Test:  0.6278179740655059
+RMSE	 Train:  161.23248487262657 	Test:  180.14108429869654
+MAPE	 Train:  3.8947960294899336e+16 	Test:  4.087980787568722e+16
+
+sym7-2
+R2	 Train:  0.4398821257046812 	Test:  0.6180992711886386
+RMSE	 Train:  162.90390238517548 	Test:  182.47791847257992
+MAPE	 Train:  3.599621161939869e+16 	Test:  3.440404582987035e+16
+
+sym5-2
+R2	 Train:  0.33232934837495376 	Test:  0.5519456818686095
+RMSE	 Train:  177.8577997245971 	Test:  197.6516336689071
+MAPE	 Train:  3.9319182740246616e+16 	Test:  4.48841393067817e+16
+
+MICROSEISMIC ON
+haar-2
+R2	 Train:  0.3728882352447377 	Test:  0.38932529005188843
+RMSE	 Train:  147.9579504239923 	Test:  165.23046593948823
+MAPE	 Train:  1151752131505005.0 	Test:  0.20345670507359315
+
+sym2-4
+R2	 Train:  0.31996157811317294 	Test:  0.35388793054214274
+RMSE	 Train:  154.07513535356193 	Test:  169.9570119418242
+MAPE	 Train:  1406875655037328.8 	Test:  0.20792937705936823
+
+error windows=8
+sym2-4
+R2	 Train:  0.34854297410646495 	Test:  0.37774682376977586
+RMSE	 Train:  150.80256156945404 	Test:  166.78950554346105
+MAPE	 Train:  1127470361532351.5 	Test:  0.21156082103197774
+
+error windows=16
+sym2-4
+R2	 Train:  0.401368935917061 	Test:  0.4884371967112523
+RMSE	 Train:  144.55910715632356 	Test:  151.2288464464086
+MAPE	 Train:  1294084072171576.2 	Test:  0.198421897235661
+
+error windows=24
+sym2-4
+R2	 Train:  0.4213718311672805 	Test:  0.4218284496108199
+RMSE	 Train:  142.1234098442385 	Test:  160.773149328929
+MAPE	 Train:  1615256489938457.8 	Test:  0.21506308558176393
+
+error windows=32
+sym2-4
+R2	 Train:  0.36397561901612097 	Test:  0.3620593783483089
+RMSE	 Train:  149.00564250772698 	Test:  168.87886005015864
+MAPE	 Train:  1946540049169887.5 	Test:  0.23558627326501952
+
+error windows=64
+sym2-4
+R2	 Train:  0.4803806303287189 	Test:  0.29982650264639843
+RMSE	 Train:  134.6816717184079 	Test:  176.92450701574737
+MAPE	 Train:  777769600784401.5 	Test:  0.25175645726231516
+
+
+############# env = serkanTez ###############
+error windows=24
+sym2-4
+R2	 Train:  0.5195221131666724 	Test:  0.497890906670332
+RMSE	 Train:  129.50977083561082 	Test:  149.8249713983297
+MAPE	 Train:  1492489906569019.0 	Test:  0.21436646881838292
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=0.00)
+R2	 Train:  0.4890847102875717 	Test:  0.4831740911538569
+RMSE	 Train:  133.54888987844402 	Test:  152.0047987272505
+MAPE	 Train:  1577457703199088.0 	Test:  0.2163129279611938
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=0.00)
+model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=0.00)
+R2	 Train:  -0.030272571631061007 	Test:  -0.028227195475090783
+RMSE	 Train:  189.64522030429268 	Test:  214.40243001165558
+MAPE	 Train:  1520089732721858.2 	Test:  0.26750644582964916
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=0.00)
+R2	 Train:  -0.08991712153995879 	Test:  0.1350388695956325
+RMSE	 Train:  195.05746241173358 	Test:  196.6452479741608
+MAPE	 Train:  3823294989688275.5 	Test:  0.2856476056716056
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=0.00)
+model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=0.00)
+R2	 Train:  -0.22942195358309458 	Test:  -0.11077090507543974
+RMSE	 Train:  207.16496668784725 	Test:  222.84218489387186
+MAPE	 Train:  1813151611290957.5 	Test:  0.3106880357030936
+
+############ L2 REG
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.01)
+R2	 Train:  0.5231589267954835 	Test:  0.507658617912584
+RMSE	 Train:  129.01869978354392 	Test:  148.36051437117177
+MAPE	 Train:  1829259359988735.2 	Test:  0.2093029360446754
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.01)
+model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.01)
+R2	 Train:  0.4525393083656417 	Test:  0.419362485518869
+RMSE	 Train:  138.24273055934685 	Test:  161.11564194638635
+MAPE	 Train:  1132281587940621.8 	Test:  0.22073633358870615
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.1)
+R2	 Train:  0.5397339444272402 	Test:  0.5257885891552658
+RMSE	 Train:  126.75651957623764 	Test:  145.60328059360577
+MAPE	 Train:  1656250494295578.5 	Test:  0.20659558349548196
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.5)
+R2	 Train:  0.5254998899655259 	Test:  0.5140364929647281
+RMSE	 Train:  128.70161339790593 	Test:  147.39643816491977
+MAPE	 Train:  1599304375792456.2 	Test:  0.20627689114864117
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=1)
+R2	 Train:  0.5177344913037196 	Test:  0.5076047157370019
+RMSE	 Train:  129.75046823908554 	Test:  148.3686355000457
+MAPE	 Train:  1521302635626204.0 	Test:  0.20492107363905646
+
+############ L1 REG
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.01, l2=0.00)
+R2	 Train:  0.5380894232393025 	Test:  0.5147639859271422
+RMSE	 Train:  126.98276688609381 	Test:  147.28606976168442
+MAPE	 Train:  1610424325822999.0 	Test:  0.20757743051905989
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.1, l2=0.00)
+R2	 Train:  0.4597578014930749 	Test:  0.4385849085024963
+RMSE	 Train:  137.32831284294664 	Test:  158.4262715606833
+MAPE	 Train:  1588191349920477.5 	Test:  0.21398522015101748
+
+
+
+############### ELASTIC REG
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.01, l2=0.01)
+R2	 Train:  0.5262986638222524 	Test:  0.5006544740179808
+RMSE	 Train:  128.59323957117053 	Test:  149.4120903094828
+MAPE	 Train:  1707818631369848.8 	Test:  0.2124875141265523
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.01, l2=0.1)
+R2	 Train:  0.5265141372864517 	Test:  0.5180781546821134
+RMSE	 Train:  128.5639895138553 	Test:  146.78222501394058
+MAPE	 Train:  1561621202918859.5 	Test:  0.2071216534590018
+
+
+############### POWER(3) + REG
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=0.1)
+R2	 Train:  0.510360248945337 	Test:  0.5162107000012709
+RMSE	 Train:  130.73870134921205 	Test:  147.06634174859983
+MAPE	 Train:  1345484820475163.5 	Test:  0.20610440451662274
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=1)
+R2	 Train:  0.5251075945051581 	Test:  0.512999750243248
+RMSE	 Train:  128.75480477383866 	Test:  147.55358038609515
+MAPE	 Train:  1422939344337869.5 	Test:  0.20687493009730745
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=10)
+R2	 Train:  0.4824076928278558 	Test:  0.5041943990576224
+RMSE	 Train:  134.4187148720861 	Test:  148.8815475458852
+MAPE	 Train:  1832905272669498.2 	Test:  0.2175390060235113
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100)
+R2	 Train:  0.5342226338956179 	Test:  0.5326821287165324
+RMSE	 Train:  127.51316422302416 	Test:  144.5410998369853
+MAPE	 Train:  1485449926846388.5 	Test:  0.2046212274721322
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=1000)
+R2	 Train:  0.47391759867951944 	Test:  0.48554757290757766
+RMSE	 Train:  135.5166693993373 	Test:  151.65536212008232
+MAPE	 Train:  1834844938326844.5 	Test:  0.21351381810801967
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=10000)
+R2	 Train:  0.5259116145685719 	Test:  0.5273105667417752
+RMSE	 Train:  128.64576396883947 	Test:  145.36943655250678
+MAPE	 Train:  1261732754018125.8 	Test:  0.20082020231936173
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=10000)
+R2	 Train:  0.5136991552308473 	Test:  0.527924871899997
+RMSE	 Train:  130.29217817022828 	Test:  145.2749450945139
+MAPE	 Train:  1420624649097688.8 	Test:  0.20321946849174954
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100000)
+R2	 Train:  0.4597265228613443 	Test:  0.5142196783494488
+RMSE	 Train:  137.33228826319657 	Test:  147.3686547842386
+MAPE	 Train:  1879153772645189.2 	Test:  0.20971930679048328
+
+############### POWER(4) + REG
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=0.1)
+R2	 Train:  -0.13645491057676495 	Test:  -0.06651315599756269
+RMSE	 Train:  199.1782614546961 	Test:  218.35757808433198
+MAPE	 Train:  1566551668572455.0 	Test:  0.34675710446441926
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=1)
+R2	 Train:  -0.9444425588147867 	Test:  -0.6626584988234527
+RMSE	 Train:  260.5333906547832 	Test:  272.6381890981243
+MAPE	 Train:  3951499974803670.0 	Test:  0.3594055242687558
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=10)
+R2	 Train:  -0.912420921825988 	Test:  -0.6310079570705025
+RMSE	 Train:  258.379215694726 	Test:  270.03073594024335
+MAPE	 Train:  4171887215219311.0 	Test:  0.3586448199789824
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=100)
+R2	 Train:  -0.8904937386316842 	Test:  -0.7991287723705309
+RMSE	 Train:  256.8937001707846 	Test:  283.60656817566866
+MAPE	 Train:  1669959430027852.2 	Test:  0.41976763477972734
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=1000)
+R2	 Train:  -0.9114303373717596 	Test:  -0.6295107081627995
+RMSE	 Train:  258.31229015981046 	Test:  269.9067647321733
+MAPE	 Train:  4173235300410186.5 	Test:  0.3584332069904922
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=10000)
+R2	 Train:  -0.3402969400918736 	Test:  -0.20522860043182956
+RMSE	 Train:  216.30489393926527 	Test:  232.1239085396997
+MAPE	 Train:  3778933136453816.5 	Test:  0.3286641533174264
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=100000)
+R2	 Train:  -0.19874537038488183 	Test:  -0.1626095038936266
+RMSE	 Train:  204.56404557390022 	Test:  227.98280596337972
+MAPE	 Train:  1046363292979468.4 	Test:  0.26264747413697415
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=4, l1=0.00, l2=500000)
+R2	 Train:  0.5064357028361568 	Test:  0.5146036350723782
+RMSE	 Train:  131.26160214953185 	Test:  147.3104037926158
+MAPE	 Train:  1122661739863626.9 	Test:  0.20403810825953994
+
+###### y_pred_reg
+exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.000001)
+R2	 Train:  0.5287896208321339 	Test:  0.5044272990240941
+RMSE	 Train:  128.2546903434141 	Test:  148.846575592838
+MAPE	 Train:  1521736283024928.5 	Test:  0.2088816202638738
+
+exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.00001)
+R2	 Train:  0.538121228648463 	Test:  0.5245534633569073
+RMSE	 Train:  126.97839503514928 	Test:  145.79277563218227
+MAPE	 Train:  1529577687484479.0 	Test:  0.2062599730751704
+
+exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.0001)
+R2	 Train:  0.5089872302059394 	Test:  0.502105703709657
+RMSE	 Train:  130.92187788069145 	Test:  149.1948168765536
+MAPE	 Train:  1715367755632093.2 	Test:  0.21015268335291598
+
+exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.001)
+R2	 Train:  0.4456187254203109 	Test:  0.4439009948947438
+RMSE	 Train:  139.11376634862364 	Test:  157.6744116724023
+MAPE	 Train:  1493955603006167.5 	Test:  0.21077465453833263
+
+exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.01)
+R2	 Train:  -0.3601548181164185 	Test:  -0.1965417109853258
+RMSE	 Train:  217.9013920074217 	Test:  231.2858595035774
+MAPE	 Train:  3667370773567699.0 	Test:  0.3107117079827331
+
+exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.1)
+R2	 Train:  -0.8061688215896536 	Test:  -0.5310810201570508
+RMSE	 Train:  251.09901152031725 	Test:  261.62801523294326
+MAPE	 Train:  4511723883424364.0 	Test:  0.3593396478539341
