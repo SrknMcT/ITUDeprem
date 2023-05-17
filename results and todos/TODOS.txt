@@ -1,0 +1,49 @@
+TODOS:
+
+- baseline methods:
+1. poisson distribution (distfit library)
+2. logistic regression
+3. Vanilla neural network
+4. random forest regression
+5. XGBoost regression
+6. LSTM regression
+
+- Imputation (short lapses):
+1. handling missing values (imputation): mean, median, mode, KNN, MICE, etc.
+2. Custom imputation: interpolation between wavelet coefficients
+3. Farklı istasyonlarla doldurmak (multiview learning?)
+4. Find a way to handle long lapses
+
+- how to fill zeroes and spikes? we are using microseismic
+1. filling zeros with values near to zero (random gaussians)
+
+- Handling Outliers:
+1. median filter on minute scale when we read EFD first from .dat files
+
+- First ER -> ER then ER+EFD -> ER then EFD -> ER (primary network shoud be ER, secondary network should be EFD)
+1. for ER -> ER implement cascaded modules
+2. for EFD+ER -> ER order of cascaded network (right now we are using EFD as primary)
+
+- Adding input windows yearly and 3-monthly for EFD
+1. Removing seasonalities (yearly and monthly) ?
+
+- adding more statistics (mean, std, kurtosis, skewness...)
+
+- wavelet experiments for all stations
+
+- Tune neural networks
+
+- for Mag experiments extend output time windows to 4-5 days
+
+- Extropaltion to check our model detect patterns well
+
+- new conversion formula
+1. Tune basis value instead of 2. 
+2. Use different basis for small eq and big eq 
+
+- Fuse 2 stations
+1. Random forest similarities for multi-view learning.
+
+- Real time online predictions
+
+- reimplementation of old code (library)

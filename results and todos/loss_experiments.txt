@@ -1,3 +1,4 @@
+####################################### ERROR WINDIWS AND WAVELET FUNC #######################################
 MICROSEISMIC OFF
 error windows=4
 haar-2
@@ -67,6 +68,9 @@ RMSE	 Train:  134.6816717184079 	Test:  176.92450701574737
 MAPE	 Train:  777769600784401.5 	Test:  0.25175645726231516
 
 
+
+
+####################################### CUSTOM LOSS #######################################
 ############# env = serkanTez ###############
 error windows=24
 sym2-4
@@ -318,3 +322,211 @@ exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.1)
 R2	 Train:  -0.8061688215896536 	Test:  -0.5310810201570508
 RMSE	 Train:  251.09901152031725 	Test:  261.62801523294326
 MAPE	 Train:  4511723883424364.0 	Test:  0.3593396478539341
+
+
+
+
+
+####################################### BEST CUSTOM LOSSES #######################################
+################## MICROSEISMIC OFF
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.1)
+R2	 Train:  0.558433938483167 	Test:  0.6591046535319821
+RMSE	 Train:  144.64040035991695 	Test:  172.40331453540801
+MAPE	 Train:  2.8292228493427828e+16 	Test:  3.43301513339643e+16
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100)
+R2	 Train:  0.5456916651271614 	Test:  0.6604562716758706
+RMSE	 Train:  146.7125022771205 	Test:  172.06119357586294
+MAPE	 Train:  3.104465163688396e+16 	Test:  3.3626274988238056e+16
+
+################## MICROSEISMIC On
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.1)
+R2	 Train:  0.5397339444272402 	Test:  0.5257885891552658
+RMSE	 Train:  126.75651957623764 	Test:  145.60328059360577
+MAPE	 Train:  1656250494295578.5 	Test:  0.20659558349548196
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100)
+R2	 Train:  0.5342226338956179 	Test:  0.5326821287165324
+RMSE	 Train:  127.51316422302416 	Test:  144.5410998369853
+MAPE	 Train:  1485449926846388.5 	Test:  0.2046212274721322
+
+
+
+
+
+####################################### DEAFULT POST PROCESSING #######################################
+################## MICROSEISMIC On
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.1, reg_term="Wb")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7487748986945542 	Test:  0.7663453033665617
+RMSE	 Train:  93.64775002633819 	Test:  102.20506474716085
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7161020658448745 	Test:  0.727059030377325
+RMSE	 Train:  99.55130297358605 	Test:  110.46368455337335
+
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7582660561728938 	Test:  0.7666307305883033
+RMSE	 Train:  91.86173659428003 	Test:  102.14261998885011
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100, reg_term="Wb")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7765577252146525 	Test:  0.7901414547379082
+RMSE	 Train:  88.31785334671154 	Test:  96.8608975683338
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7353660556141812 	Test:  0.7456587417028807
+RMSE	 Train:  96.11443282869027 	Test:  106.63347636737582
+
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7849123028315943 	Test:  0.7802445685246135
+RMSE	 Train:  86.65100764895496 	Test:  99.11855660750169
+
+
+
+
+####################################### REG TERMS #######################################
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.1, reg_term="W")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7765577252146525 	Test:  0.7901414547379082
+RMSE	 Train:  88.31785334671154 	Test:  96.8608975683338
+
+Median filtering (best for removing FP)
+R2	 Train:  0.725996161398742 	Test:  0.734009732010988
+RMSE	 Train:  97.80119380455068 	Test:  109.04808257574375
+
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7690863482703985 	Test:  0.7638988224125458
+RMSE	 Train:  89.78228148362227 	Test:  102.73874036809417
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.1, reg_term="b")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7557450780904947 	Test:  0.7755063082119418
+RMSE	 Train:  92.33949485567804 	Test:  100.1814310517124
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7179800123766088 	Test:  0.7395413533030639
+RMSE	 Train:  99.221497444881 	Test:  107.90822529282372
+ 
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7638136568815573 	Test:  0.7669645315658706
+RMSE	 Train:  90.80154193620758 	Test:  102.06954372795755
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.1, l2=0.00, reg_term="WX+b")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7768500417104964 	Test:  0.7837142354814417
+RMSE	 Train:  88.26006389168258 	Test:  98.33296356464645
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7443869521995019 	Test:  0.7358746442434908
+RMSE	 Train:  94.46204467151664 	Test:  108.66513093926802
+
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7869594422598878 	Test:  0.7612078263162041
+RMSE	 Train:  86.2376627775005 	Test:  103.3225710687516
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100, reg_term="W")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7807662887594939 	Test:  0.7924210078011819
+RMSE	 Train:  87.48216056911873 	Test:  96.3333935923219
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7472292927681066 	Test:  0.750830853303738
+RMSE	 Train:  93.93538166613632 	Test:  105.54369456118273
+
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7877396455142712 	Test:  0.7743935581853234
+RMSE	 Train:  86.07960691182619 	Test:  100.4294092707066
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100, reg_term="b")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7852492420998274 	Test:  0.8009249868658326
+RMSE	 Train:  86.58311076191696 	Test:  94.3394927268428
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7472504854440483 	Test:  0.7598062701504822
+RMSE	 Train:  93.93144374181479 	Test:  103.62534589753162
+
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7905555854060141 	Test:  0.7859026479087659
+RMSE	 Train:  85.50671541098086 	Test:  97.83422480005089
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=100, l2=0.00, reg_term="WX+b")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7351140412295671 	Test:  0.7493392939181871
+RMSE	 Train:  96.16018745714082 	Test:  105.85912245738766
+
+Median filtering (best for removing FP)
+R2	 Train:  0.680798971400912 	Test:  0.6899143127067358
+RMSE	 Train:  105.5596577781168 	Test:  117.74053925773104
+
+Combined (best of both) (pct_threshold=0.3)
+R2	 Train:  0.7378644083362893 	Test:  0.7294927183384072
+RMSE	 Train:  95.65965897991403 	Test:  109.97010512922418
+
+
+
+####################################### BEST CONFIGS #######################################
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=2, l1=0.1, l2=0.00, reg_term="WX+b")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7768500417104964 	Test:  0.7837142354814417
+RMSE	 Train:  88.26006389168258 	Test:  98.33296356464645
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7443869521995019 	Test:  0.7358746442434908
+RMSE	 Train:  94.46204467151664 	Test:  108.66513093926802
+
+Combined (best of both) (pct_threshold=0.4)
+R2	 Train:  0.7835889399938171 	Test:  0.7837142354814417
+RMSE	 Train:  86.91716625017837 	Test:  98.33296356464645
+
+error windows=24
+sym2-4
+final_model = exponential_loss_w_elastic_reg(power=3, l1=0.00, l2=100, reg_term="b")
+-----------------
+SG filtering (best scores)
+R2	 Train:  0.7852492420998274 	Test:  0.8009249868658326
+RMSE	 Train:  86.58311076191696 	Test:  94.3394927268428
+
+Median filtering (best for removing FP)
+R2	 Train:  0.7472504854440483 	Test:  0.7598062701504822
+RMSE	 Train:  93.93144374181479 	Test:  103.62534589753162
+
+Combined (best of both) (pct_threshold=0.4)
+R2	 Train:  0.7911760856979699 	Test:  0.8009249868658326
+RMSE	 Train:  85.37996030763084 	Test:  94.3394927268428
