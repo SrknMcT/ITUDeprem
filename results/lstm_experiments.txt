@@ -1,0 +1,20 @@
+lstm_sakarya
+
+Train Score: 199.14 RMSE
+Train Score: 0.62 RMSPE
+Train Score: 0.18 R2
+
+Test Score: 234.81 RMSE
+Test Score: 0.62 RMSPE
+Test Score: -0.25 R2
+
+
+lstm_yeşilyurt
+
+Train Score: 195.23 RMSE
+Train Score: 0.64 RMSPE
+Train Score: 0.21 R2
+
+Test Score: 242.10 RMSE
+Test Score: 0.55 RMSPE
+Test Score: -0.33 R2
