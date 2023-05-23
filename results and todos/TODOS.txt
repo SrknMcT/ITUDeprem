@@ -47,3 +47,11 @@ TODOS:
 - Real time online predictions
 
 - reimplementation of old code (library)
+
+----------------------------------
+IDEAS FROM BERK HOCA
+
+- new evalution method for high EQ. 
+
+- poission likelihood estimation. 
+
