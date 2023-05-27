@@ -30,8 +30,14 @@ TODOS:
 - adding more statistics (mean, std, kurtosis, skewness...)
 
 - wavelet experiments for all stations
+1. threshold clipping (remove small coeffs)
+2. remove big coeffs ?
 
 - Tune neural networks
+1. hyperparameter tuning
+2. gradient clipping
+3. batch normalization
+4. weight normalization !
 
 - for Mag experiments extend output time windows to 4-5 days
 
