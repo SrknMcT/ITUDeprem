@@ -41,9 +41,16 @@ class FinalModel(BaseModel):
         self.model.compile(
             optimizer = optimizer, 
             # (power=3, l1=0.00, l2=100, y_pred_l2=0.00) and 
-            # (power=2, l1=0.00, l2=0.1, y_pred_l2=0.00) are the best. Plots are similar. Inspect these two configuration on different experiments. 
+            # (power=2, l1=0.00, l2=0.1, y_pred_l2=0.00) are the best. Plots are similar. Inspect these two configuration on different stations. 
+            # Probably power of 2 will be more adaptive.
             # y_pred_l2 is not that effective as l2.
-            loss = self.exponential_loss_w_elastic_reg(power=2, l1=0.00, l2=0.00, y_pred_l2=0.00),
+            loss = self.exponential_loss_w_elastic_reg(power=2, l1=0.1, l2=0.00, reg_term="WX+b"),
+                                
+            # use diff to 2 with y_pred_l2=0.00001
+            # loss = self.custom_loss(power=1, l1=0.00, l2=0.00, y_pred_l2=0.00001),
+            
+            # use diff to median of 24 with y_pred_l2=0.00001
+            # loss = self.custom_loss(power=1, l1=0.00, l2=0.1, y_pred_l2=0.00000001),
             metrics = self.metrics)
 
     def fit_model(self, X_train, y_train, verbose=False):
